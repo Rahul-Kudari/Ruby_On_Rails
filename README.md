@@ -82,35 +82,35 @@ Key Commands Summary
 # day 3
 
 The Core Structure
-bin/: The "Executable Tools." Contains scripts like bin/rails that automate code generation, database management, and server startup.
-config/: The "Application Brain." The central hub for environment settings, database credentials, and routing rules.
-application.rb: The "Global Hub." Boots the app, loads gems, and sets universal rules (like Time Zones). Errors here prevent the app from starting.
-puma.rb: The "Engine Room." Configures the web server's "muscle" by defining threads and workers to handle multiple user requests simultaneously.
+-bin/: The "Executable Tools." Contains scripts like bin/rails that automate code generation, database management, and server startup.
+-config/: The "Application Brain." The central hub for environment settings, database credentials, and routing rules.
+-application.rb: The "Global Hub." Boots the app, loads gems, and sets universal rules (like Time Zones). Errors here prevent the app from starting.
+-puma.rb: The "Engine Room." Configures the web server's "muscle" by defining threads and workers to handle multiple user requests simultaneously.
 
 Environments (config/environments/)
-development.rb: The "Builder's Bench." Enables instant code reloading and detailed error reports for fast debugging.
-test.rb: The "Sandbox." An isolated area to run tests and simulate errors without risking real data.
-production.rb: The "Vault." Optimizes speed and locks down security by hiding errors and forcing HTTPS (config.force_ssl = true).
+-development.rb: The "Builder's Bench." Enables instant code reloading and detailed error reports for fast debugging.
+-test.rb: The "Sandbox." An isolated area to run tests and simulate errors without risking real data.
+-production.rb: The "Vault." Optimizes speed and locks down security by hiding errors and forcing HTTPS (config.force_ssl = true).
 
 Initializers (config/initializers/)
-Small Ruby files that run once during startup to set specific rules:
-assets.rb: The "Stylist." Instructions for mashing CSS/JS into fast, compressed files for production.
-content_security_policy.rb: The "Security Guard." Prevents script injection (XSS) by whitelisting trusted content sources.
-filter_parameter_logging.rb: The "Privacy Mask." Blurs sensitive data (passwords/CC numbers) in logs.
-inflections.rb: The "Grammar Coach." Teaches Rails how to pluralize irregular words (e.g., Person → People).
-ci.rb: The "Test Detector." Adjusts settings for automated environments (like GitHub Actions) to speed up testing.
+-Small Ruby files that run once during startup to set specific rules:
+-assets.rb: The "Stylist." Instructions for mashing CSS/JS into fast, compressed files for production.
+-content_security_policy.rb: The "Security Guard." Prevents script injection (XSS) by whitelisting trusted content sources.
+-filter_parameter_logging.rb: The "Privacy Mask." Blurs sensitive data (passwords/CC numbers) in logs.
+-inflections.rb: The "Grammar Coach." Teaches Rails how to pluralize irregular words (e.g., Person → People).
+-ci.rb: The "Test Detector." Adjusts settings for automated environments (like GitHub Actions) to speed up testing.
 
 Configuration Files (.yml)
-database.yml: The "Bridge." Connects your app code to your physical data storage.
-cable.yml: The "Live Wire." Configures WebSockets for real-time features like chat or live alerts.
-cache.yml: The "Short-term Memory." Stores "pre-calculated" results (like Top 10 trends) in Redis for instant retrieval.
-queue.yml: The "Shift Schedule." Manages background workers (Sidekiq) to handle heavy tasks like emails.
-storage.yml: The "Shipping Manifest." Defines where to upload files (Local Disk vs. Cloud like Amazon S3).
-deploy.yml: The "Launch Checklist." Steps to build, test, and ship your code to a live server.
+-database.yml: The "Bridge." Connects your app code to your physical data storage.
+-cable.yml: The "Live Wire." Configures WebSockets for real-time features like chat or live alerts.
+-cache.yml: The "Short-term Memory." Stores "pre-calculated" results (like Top 10 trends) in Redis for instant retrieval.
+-queue.yml: The "Shift Schedule." Manages background workers (Sidekiq) to handle heavy tasks like emails.
+-storage.yml: The "Shipping Manifest." Defines where to upload files (Local Disk vs. Cloud like Amazon S3).
+-deploy.yml: The "Launch Checklist." Steps to build, test, and ship your code to a live server.
 
 The Boot Sequence
-boot.rb: Grabs the keys (Loads Bundler and Gems).
-application.rb: Sets the rules (Universal configurations).
-environment.rb: Flips the switch (Initializes the entire engine).
+-boot.rb: Grabs the keys (Loads Bundler and Gems).
+-application.rb: Sets the rules (Universal configurations).
+-environment.rb: Flips the switch (Initializes the entire engine).
 
 
