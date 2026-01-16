@@ -33,5 +33,3 @@
 1. boot.rb: Grabs the keys (Loads Bundler and Gems).
 2. application.rb: Sets the rules (Universal configurations).
 3. environment.rb: Flips the switch (Initializes the entire engine).
-
-
