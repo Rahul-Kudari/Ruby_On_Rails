@@ -1,4 +1,4 @@
-#day3
+# DAY3
 
 Rails Project Configuration Guide
 
