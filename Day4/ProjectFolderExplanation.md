@@ -43,3 +43,4 @@ Thin vs. Fat Models:
 
 -gitattributes: Used to define attributes for specific paths, such as preventing direct modification of certain files or handling line endings.
 
+
