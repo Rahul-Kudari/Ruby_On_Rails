@@ -1,0 +1,142 @@
+<div class="customer-container">
+  
+  <div class="back-link">
+    <%= link_to "← Back to customers", customers_path, class: "back-btn" %>
+  </div>
+
+  <% if notice.present? %>
+    <div class="notice">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <div class="customer-card">
+    
+    <div class="customer-header">
+      <div class="avatar">
+        <%= @customer.name[0].upcase if @customer.name.present? %>
+      </div>
+      <h1><%= @customer.name %></h1>
+      <p><%= @customer.email %></p>
+    </div>
+
+    <div class="customer-actions">
+      <%= link_to "Edit Profile", edit_customer_path(@customer), class: "edit-btn" %>
+      
+      <div class="danger-zone">
+        <p>Danger Zone</p>
+        <%= button_to "Delete Customer Record", @customer, method: :delete, form: { data: { confirm: "Are you sure?" } }, class: "delete-btn" %>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<style>.customer-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 16px;
+  font-family: sans-serif;
+}
+
+.back-btn {
+  color: #555;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.notice {
+  background: #e6f7e6;
+  color: #225522;
+  padding: 10px;
+  border: 1px solid #b5e6b5;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.customer-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.customer-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  background: #eee;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #666;
+}
+
+.customer-header h1 {
+  margin: 0;
+  font-size: 20px;
+  color: #222;
+}
+
+.customer-header p {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #666;
+}
+
+.customer-actions {
+  border-top: 1px solid #ddd;
+  padding-top: 16px;
+}
+
+.edit-btn {
+  display: block;
+  text-align: center;
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.edit-btn:hover {
+  background: #555;
+}
+
+.danger-zone {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed #ccc;
+  text-align: center;
+}
+
+.danger-zone p {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.delete-btn {
+  width: 100%;
+  border: 1px solid #f5b5b5;
+  color: #a00;
+  padding: 8px;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.delete-btn:hover {
+  background: #fdd;
+}</style>

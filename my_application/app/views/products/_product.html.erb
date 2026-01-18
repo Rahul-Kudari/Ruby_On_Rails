@@ -1,0 +1,86 @@
+<div id="<%= dom_id product %>" class="products-list">
+  
+    <div>
+    <strong>Name:</strong>
+    <%= product.name %>
+  </div>
+
+  <div>
+    <strong>Description:</strong>
+    <%= product.description %>
+  </div>
+
+  <div>
+    <strong>Price:</strong>
+    <%= product.price %>
+  </div>
+
+  <div>
+    <strong>Stock:</strong>
+    <%= product.stock %>
+  </div>
+
+  <div>
+   <strong class="active <%= product.is_active ? 'status-green' : 'status-red' %>">active</strong>
+    <%= product.is_active %>
+</strong>
+
+  </div>
+
+  <div>
+  <button class="buy">Buy</button>
+  <button class="cart">Add to Cart</button>
+  </div>
+
+ 
+</div>
+
+<style>
+.products-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;      
+  justify-content: center;
+  align-items: center;
+  gap: 10px;            
+ 
+  width: 200px;
+  min-height: 250px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: black 5px solid;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 9px;
+  text-align: center;
+}
+
+
+.products-list > div {
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+
+.products-list div:last-child {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+button {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 2px solid black;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.buy { background-color: yellow }
+.cart { background-color: white; }
+
+.status-green { background-color: green; color: white; padding: 2px 8px; border-radius: 10px; display: inline-block; }
+.status-red { background-color: red; color: white; padding: 2px 8px; border-radius: 10px; display: inline-block; }
+</style>

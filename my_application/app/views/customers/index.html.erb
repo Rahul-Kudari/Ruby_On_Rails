@@ -1,0 +1,137 @@
+
+
+<style>
+  .container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .notice {
+    background: #ecfdf5;
+    color: #065f46;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #a7f3d0;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+
+  .notice span {
+    margin-right: 8px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  .header p {
+    color: #6b7280;
+    font-size: 15px;
+    margin-top: 4px;
+  }
+
+  .new-customer-btn {
+    text-decoration: none;
+    background: #1a1a1a;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: background 0.2s;
+  }
+
+  .new-customer-btn:hover {
+    background: #333;
+  }
+
+  .customers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .customer-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+
+  .customer-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  }
+
+  .customer-info {
+    margin-bottom: 20px;
+  }
+
+  .customer-footer {
+    border-top: 1px solid #f3f4f6;
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+
+  .view-profile {
+    text-decoration: none;
+    color: #4A90E2;
+    font-size: 14px;
+    font-weight: 600;
+  }
+</style>
+
+
+<div class="container">
+
+  <% if notice.present? %>
+    <div class="notice">
+      <span>✓</span> <%= notice %>
+    </div>
+  <% end %>
+
+  <div class="header">
+    <div>
+      <h1>Customers</h1>
+      <p>Manage your directory and client details.</p>
+    </div>
+    
+    <%= link_to new_customer_path, class: "new-customer-btn" do %>
+      + New Customer
+    <% end %>
+  </div>
+
+  <div id="customers" class="customers-grid">
+    <% @customers.each do |customer| %>
+      <div class="customer-card">
+        
+        <div class="customer-info">
+          <%= render customer %>
+        </div>
+
+        <div class="customer-footer">
+          <%= link_to "View Profile →", customer, class: "view-profile" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

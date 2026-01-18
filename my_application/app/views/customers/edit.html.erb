@@ -1,0 +1,53 @@
+<% content_for :title, "Editing customer" %>
+
+<h1>Editing customer</h1>
+
+<%= render "form", customer: @customer %>
+
+<br>
+
+<div class="link-group">
+  <%= link_to "Show this customer", @customer, class: "btn btn-primary" %>
+  <%= link_to "Back to customers", customers_path, class: "btn btn-secondary" %>
+</div>
+
+<style>
+
+.link-group {
+  display: flex;
+  gap: 12px;        /* space between buttons */
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Primary button (fog white background with dark text) */
+.btn-primary {
+  background-color: #f5f5f5; /* fog white */
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.btn-primary:hover {
+  background-color: #e5e5e5;
+}
+
+/* Secondary button (dark sky blue background with white text) */
+.btn-secondary {
+  background-color: #0a3d91; /* dark sky blue */
+  color: #fff;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #082d6e; /* darker blue on hover */
+}
+</style>

@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Products" %>
+
+<h1>Products</h1>
+
+<div id="products" class="products">
+  <% @products.each do |product| %>
+   <div class="items">
+    <%= render product %>
+    <p>
+    <button >  <%= link_to "Show this product", product %></button>
+    </p></div>
+  <% end %>
+</div>
+<button>
+<%= link_to "New product", new_product_path %></button>
+
+<style>
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  gap: 20px;
+  padding: 20px;
+}
+
+
+
+</style>

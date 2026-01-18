@@ -1,0 +1,30 @@
+<% content_for :title, "New customer" %>
+
+<h1>New customer</h1>
+
+<%= render "form", customer: @customer %>
+
+<br>
+
+<div class="back-link">
+  <%= link_to "Back to customers", customers_path, class: "back-btn" %>
+</div>
+<style>
+.back-link {
+  margin-top: 20px;
+}
+
+.back-btn {
+  display: inline-block;
+  background-color: #0a3d91; /* dark sky blue */
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.back-btn:hover {
+  background-color: #082d6e; /* slightly darker on hover */
+}
+</style>

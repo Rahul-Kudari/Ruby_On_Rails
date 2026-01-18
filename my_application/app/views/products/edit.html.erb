@@ -1,0 +1,28 @@
+<% content_for :title, "Editing product" %>
+
+<h1>Editing product</h1>
+
+<%= render "form", product: @product %>
+<br>
+<div>
+  <button><%= link_to "Show this product", @product %> |</button>
+  <button><%= link_to "Back to products", products_path %></button>
+</div>
+
+<style>
+
+button{
+  background: white;
+  color: black;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.9);
+}
+
+button:hover {
+  background: #f8f8f8;
+  box-shadow: 0 0 25px 10px rgba(255, 255, 255, 1);
+}
+</style>
