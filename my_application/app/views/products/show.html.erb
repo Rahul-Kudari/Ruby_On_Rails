@@ -2,30 +2,33 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @product %>
+<br>
+<br>
+<br>
 
 <div>
- <button> <%= link_to "Edit this product", edit_product_path(@product) %> </button> |
-  <button>  <%= link_to "Back to products", products_path %></button>
-
+  <%= link_to "Edit this product", edit_product_path(@product), class:"btn-primary"  %>      |     
+  <%= link_to "Back to products", products_path, class:"btn-primary"  %>
+  <br>
+  <br>
+  <br>
   <%= button_to "Destroy this product", @product, method: :delete %>
  
 </div></center>
-
-
 <style>
 
-button{
-  background: white;
-  color: black;
-  border: 1px solid #ddd;
+.btn-primary {
+  display: inline-block;
   padding: 10px 20px;
+  background-color: #333333;
+  color: white;
+  text-decoration: none;
   border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background: #f8f8f8;
-  box-shadow: 0 0 25px 10px rgba(255, 255, 255, 1);
+.btn-primary:hover {
+  background-color: #253342;
 }
 </style>

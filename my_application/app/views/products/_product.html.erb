@@ -1,6 +1,6 @@
 <div id="<%= dom_id product %>" class="products-list">
   
-    <div>
+  <div>
     <strong>Name:</strong>
     <%= product.name %>
   </div>
@@ -36,51 +36,66 @@
 </div>
 
 <style>
+
 .products-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;      
-  justify-content: center;
-  align-items: center;
-  gap: 10px;            
- 
-  width: 200px;
-  min-height: 250px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: black 5px solid;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  padding: 15px;
-  border-radius: 9px;
-  text-align: center;
+  background: #ffffff;
+  border: 3px solid #e5e7eb;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 400px;
+  font-family: sans-serif;
+  color: #374151;
 }
 
 
-.products-list > div {
-  width: 100%;
-  font-family: sans-serif;
+.products-list div {
+  margin-bottom: 10px;
   font-size: 14px;
 }
 
-
-.products-list div:last-child {
-  display: flex;
-  gap: 5px;
-  justify-content: center;
-  margin-top: 10px;
+.products-list strong {
+  color: #111827;
+  margin-right: 5px;
 }
 
-
-button {
-  cursor: pointer;
-  padding: 5px 10px;
-  border: 2px solid black;
+.status-green {
+  color: #059669; 
+  background: #ecfdf5;
+  padding: 2px 6px;
   border-radius: 4px;
-  font-weight: bold;
 }
 
-.buy { background-color: yellow }
-.cart { background-color: white; }
+.status-red {
+  color: #dc2626; 
+  background: #fef2f2;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
 
-.status-green { background-color: green; color: white; padding: 2px 8px; border-radius: 10px; display: inline-block; }
-.status-red { background-color: red; color: white; padding: 2px 8px; border-radius: 10px; display: inline-block; }
+.buy, .cart {
+  display: inline-block;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 8px;
+  transition: all 0.2s;
+}
+
+
+.buy {
+  background:black;
+  color: white;
+  border: 1px solid #2563eb;
+}
+
+.cart {
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+
 </style>

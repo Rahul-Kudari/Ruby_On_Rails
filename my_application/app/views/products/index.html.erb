@@ -1,20 +1,20 @@
 <p style="color: green"><%= notice %></p>
 
 <% content_for :title, "Products" %>
-
-<h1>Products</h1>
+<center>  <h1>Products</h1> </center> 
+<%= link_to " +  New product", new_product_path, class: "btn-primary" %>
 
 <div id="products" class="products">
   <% @products.each do |product| %>
    <div class="items">
     <%= render product %>
     <p>
-    <button >  <%= link_to "Show this product", product %></button>
+  <%= link_to "Show this product", product, class: "btn-primary" %>
     </p></div>
   <% end %>
 </div>
-<button>
-<%= link_to "New product", new_product_path %></button>
+
+
 
 <style>
 .products {
@@ -23,7 +23,18 @@
   gap: 20px;
   padding: 20px;
 }
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 2px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
 
-
-
+.btn-primary:hover {
+  background-color: black;
+}
 </style>
