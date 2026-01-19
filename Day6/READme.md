@@ -38,6 +38,9 @@ Defining methods in the model allows you to encapsulate data logic. When the con
 
 * Database Query Optimization
 Using 'Product.all.limit(10)' fetches the first 10 records from the database. While you can use Ruby's '.select' block to filter active products in memory, it is generally more efficient to use '.where(is_active: true)' so the database handles the filtering before the data reaches your application.
+# Product.all.limit.(10).select{|p| p.is_active==true}
+
 
 * Pluck Method
 The pluck method is used to select one or more specific columns from the database. It returns the values in a simple array instead of creating full ActiveRecord objects. This makes it much faster and more memory-efficient when you only need a specific piece of information, like a list of names or IDs.
+
