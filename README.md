@@ -83,7 +83,7 @@ Key Commands Summary
 
 # day 3
 
-# DAY3
+
 
 Rails Project Configuration Guide
 
