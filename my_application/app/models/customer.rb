@@ -1,6 +1,6 @@
 class Customer < ApplicationRecord
 
-    # Check whether email is present or not
+  # Check whether email is present or not
   def check_email
     if email.nil? || email.strip.empty?
       "Email is not present"
