@@ -17,6 +17,8 @@ class Product < ApplicationRecord
   # end
   def availablity_check
     #check the stock value more then zero
+
+    
   end
   def apply_discount(discount_percent)
     #use case statement and calculate discount .
