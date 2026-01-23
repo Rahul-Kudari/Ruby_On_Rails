@@ -1,4 +1,13 @@
 class Product < ApplicationRecord
+
+    scope :out_of_stock, -> { where("stock <= ?", 0) }
+  # scope :out_of_stock, -> { where(stock: 0)}
+
+  # scope :test_scopes_joins, -> {joins.name_of_table.where}
+
+
+  # scope :test_scope, -> query{}  #inside the query u can put full sequence query
+
   # create the method inside a model  assign a value to the all collecting values from the products and use select and apply condition if the price is greater then  2000 then returns the values to the controller
   # pluck helps us to get the specific column to collect the values from
   
@@ -100,28 +109,28 @@ class Product < ApplicationRecord
 
 #quation one
 
-# validate :check_alpha_numeric_or_not
+validate :check_alpha_numeric_or_not
 
 def check_alpha_numeric_or_not
-  if !name.match?(/\A[a-zA-Z0-9]+\z/)
-    errors.add(:name,"the name should not be contains spaces and symbols")
+  if name.match?(/[^a-zA-Z0-9 ]/)
+    errors.add(:name,"the name should not be contains symbols")
   end
 end
 
 
 #second quations
 
-# validate :check_is_active
+validate :check_is_active
 
 def check_is_active
   if is_active!=true
-  errors.add(:i price ,"the products should be  active then only u can add the price ");
+  errors.add(:price ,"the products should be  active then only u can add the price ");
   end
 end
 
 #third quation 
 
-# validate :check_is_active_then_only_add_stock
+validate :check_is_active_then_only_add_stock
 
 def check_is_active_then_only_add_stock
   if is_active==false
@@ -140,32 +149,19 @@ def check_description
   end
 end
 
+
+validate :price_zero
+def price_zero
+  if price==0
+    errors.add(:price,"the price should not be zero")
+  end
+end
+
 #5th quation
 
 validates :is_active, acceptance: true
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
+# #6th profanity
 
 end

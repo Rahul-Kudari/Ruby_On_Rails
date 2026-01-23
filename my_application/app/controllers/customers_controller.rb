@@ -1,10 +1,24 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: %i[ show edit update destroy ]
 
+  def blacklisted_customers
+    @list_of_customers = [1,2,3]
+    @customers = Customer.blacklisted_customers(@list_of_customers)
+  end
+
   # GET /customers or /customers.json
   def index
-    @customers = Customer.all
+    #day 10 scopes query
+    
+    # list_of_customers=[1,2,3,4]
+    # @customers =Customer.blacklisted_customers(list_of_customers) #Customer.all
+
+    @customers=Customer.all
   end
+
+  
+
+  
 
   # GET /customers/1 or /customers/1.json
   def show

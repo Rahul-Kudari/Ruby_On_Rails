@@ -2,18 +2,25 @@ class Customer < ApplicationRecord
 
   # day 9 validation proccess
   
-validates :email, presence: true
-validates :email, uniqueness: true
+ validates :email, presence: true
+ validates :email, uniqueness: true
+
+#day 10  scopes  query
+
+   scope :email_check, -> { where(email: "rahul@gmail.com") }
+
+   scope :blacklisted_customers, ->(customer_ids) { where(id: customer_ids) }
+
+   
 
 
   # # Check whether email is present or not
-  # def check_email
-  #   if email.nil? || email.strip.empty?
-  #     "Email is not present"
-  #   else
-  #     "Email is present"
-  #   end
-  # end
+
+  def check_email
+    if email.nil? || email.strip.empty?
+     errors.add(:email,"Email is not present")
+    end
+  end
 
   # # Check whether name contains only alphabetic characters
   # def name_check
@@ -25,5 +32,8 @@ validates :email, uniqueness: true
   #     "Name must contain only alphabets"
   #   end
   # end
+
+
+
     
 end
