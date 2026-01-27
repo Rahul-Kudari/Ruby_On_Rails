@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "users/index"
+  get "users/show"
    resources :products do
     collection do
       get 'out_of_stock'
@@ -6,9 +8,11 @@ Rails.application.routes.draw do
   end
   get "pages/home" 
   
+   resources :users
+
    resources :customers do
     collection do
-      get 'blacklisted-customers'
+      get 'blacklisted_customers'
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -23,6 +27,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  #day 11
+ # skipps it       # includes what routes need
+  # resources :products,skip :[show], only :[edit]
  
  
 end

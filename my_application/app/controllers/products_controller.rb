@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
       end
     end
   end
-
+# save -> commit -> rollback
   # PATCH/PUT /products/1 or /products/1.json
   def update
     respond_to do |format|

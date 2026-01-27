@@ -107,7 +107,7 @@ class Product < ApplicationRecord
 
 
 
-#quation one
+# #quation one
 
 validate :check_alpha_numeric_or_not
 
@@ -162,6 +162,6 @@ end
 validates :is_active, acceptance: true
 
 
-# #6th profanity
+#6th profanity
 
 end
