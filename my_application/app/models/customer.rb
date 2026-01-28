@@ -1,5 +1,8 @@
 class Customer < ApplicationRecord
 
+  #day12
+  has_rich_text:about_me  #this gives rich text for the column that we need to add
+
   # day 9 validation proccess
   
  validates :email, presence: true

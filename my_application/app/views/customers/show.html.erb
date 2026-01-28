@@ -1,0 +1,25 @@
+<div>
+  <h2>Customer Details</h2>
+
+  <div>
+    <strong>Name:</strong>
+    <p><%= @customer.name %></p>
+  </div>
+
+  <div>
+    <strong>Email:</strong>
+    <p><%= @customer.email %></p>
+  </div>
+
+  <div>
+    <strong>About Me:</strong>
+    <div>
+      <%= @customer.about_me %>
+    </div>
+  </div>
+
+  <div>
+    <%= link_to "Edit", edit_customer_path(@customer) %> |
+    <%= link_to "Back", customers_path %>
+  </div>
+</div>

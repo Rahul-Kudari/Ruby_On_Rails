@@ -8,6 +8,9 @@ class CustomersController < ApplicationController
 
   # GET /customers or /customers.json
   def index
+
+    #day12
+    raise params.inspect
     #day 10 scopes query
     
     # list_of_customers=[1,2,3,4]
@@ -31,6 +34,7 @@ class CustomersController < ApplicationController
 
   # GET /customers/1/edit
   def edit
+
   end
 
   # POST /customers or /customers.json
@@ -50,6 +54,7 @@ class CustomersController < ApplicationController
 
   # PATCH/PUT /customers/1 or /customers/1.json
   def update
+    # raise params.inspect
     respond_to do |format|
       if @customer.update(customer_params)
         format.html { redirect_to @customer, notice: "Customer was successfully updated.", status: :see_other }
@@ -79,6 +84,7 @@ class CustomersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def customer_params
-      params.expect(customer: [ :name, :email ])
+      params.expect(customer: [ :name, :email, :about_me ]) #day12
+      #params.inspect, .permit thev values wihtch are we wanted
     end
 end

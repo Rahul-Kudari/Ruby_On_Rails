@@ -19,6 +19,10 @@
     <strong>Stock:</strong>
     <%= product.stock %>
   </div>
+  <div>
+    <strong>feedback:</strong>
+   <%= @product&.feedback || "there is no data" %>
+  </div>
 
   <div>
    <strong class="active <%= product.is_active ? 'status-green' : 'status-red' %>">active</strong>

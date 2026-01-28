@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-
+  has_rich_text :feedback
     scope :out_of_stock, -> { where("stock <= ?", 0) }
   # scope :out_of_stock, -> { where(stock: 0)}
 

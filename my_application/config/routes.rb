@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+
+  
   get "users/index"
   get "users/show"
+
+   # day 11
+  # resources :products, only: [:index, :show]   #we need to remove the new +prduct if that exists and etc that not be take root if we mentioned then it will creashes
+
    resources :products do
     collection do
       get 'out_of_stock'
@@ -30,7 +36,7 @@ Rails.application.routes.draw do
 
   #day 11
  # skipps it       # includes what routes need
-  # resources :products,skip :[show], only :[edit]
+  # resources :products, except: [:index, :show]
  
  
 end

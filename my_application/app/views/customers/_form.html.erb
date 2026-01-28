@@ -31,7 +31,12 @@
 
       <div>
         <%= form.label :email, "Email address" %>
-        <%= form.email_field :email, placeholder: "alex@company.com" %>
+        <%= form.email_field :email, placeholder: "about me add" %>
+      </div>
+
+      <div>
+        <%= form.label :about_me, "enter about me" %>
+        <%= form.rich_text_area :about_me, placeholder: "alex@company.com" %>
       </div>
 
       <%= form.submit "Create Account" %>
