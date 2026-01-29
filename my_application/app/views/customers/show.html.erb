@@ -17,6 +17,16 @@
       <%= @customer.about_me %>
     </div>
   </div>
+ <div>
+  <strong>profile_photo:</strong>
+  <div>
+    <% if @customer.profile_photo.attached? %>
+      <%= image_tag @customer.profile_photo %>
+    <% else %>
+      <p>No photo uploaded</p>
+    <% end %>
+  </div>
+</div>
 
   <div>
     <%= link_to "Edit", edit_customer_path(@customer) %> |

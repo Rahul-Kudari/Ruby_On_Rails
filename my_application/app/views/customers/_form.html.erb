@@ -35,9 +35,27 @@
       </div>
 
       <div>
+        <%= form.label :phone_number, "Enter the Phone Number" %>
+        <%= form.number_field :phone_number, placeholder: "Enter Phone Number" %>
+      </div>
+
+      <div>
+        <%= form.label :dob %>
+        <%= form.date_field :dob %>
+      </div>
+
+      
+
+      <div>
         <%= form.label :about_me, "enter about me" %>
         <%= form.rich_text_area :about_me, placeholder: "alex@company.com" %>
       </div>
+      <div>
+        <%= form.label :profile_photo, "add profile photo" %>
+        <%= form.file_field :profile_photo, placeholder: "add profile photo" %>
+      </div>
+
+      
 
       <%= form.submit "Create Account" %>
       

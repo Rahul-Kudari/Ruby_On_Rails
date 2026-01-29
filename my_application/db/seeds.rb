@@ -9,7 +9,7 @@
 #   end
 
 
-# Product.destroy_all  #helps us to clean up the database its delete all data
+Product.destroy_all  #helps us to clean up the database its delete all data
 
 
 # Product.create!([{
@@ -24,7 +24,7 @@
 
 # it helps u to create the 50 default 
 
-50.times do
+10.times do
 Product.create(
   name: Faker::Commerce.product_name,
   description: "this is simple description",

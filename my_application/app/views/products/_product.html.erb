@@ -1,5 +1,22 @@
 <div id="<%= dom_id product %>" class="products-list">
-  
+
+  <div>
+    <% if product.item_view.attached? %>
+    <%= image_tag url_for(product.item_view), size: "100x100" %>
+    <% else %>
+    <div> no profile  photo </div>
+    <% end %> 
+  </div>
+
+  <div>
+  <% if product.invoice.attached? %>
+  <%= link_to "view invoice" , product.invoice %>
+  <% else %>
+  <div>no invoice</div>
+  <% end %>
+  </div>
+
+
   <div>
     <strong>Name:</strong>
     <%= product.name %>
@@ -19,6 +36,7 @@
     <strong>Stock:</strong>
     <%= product.stock %>
   </div>
+
   <div>
     <strong>feedback:</strong>
    <%= @product&.feedback || "there is no data" %>
@@ -27,9 +45,19 @@
   <div>
    <strong class="active <%= product.is_active ? 'status-green' : 'status-red' %>">active</strong>
     <%= product.is_active %>
-</strong>
-
   </div>
+  
+  <div>
+  <strong>the products images</strong>
+  <% if product.view_items.attached? %>
+     <% product.view_items.each do |img| %>
+     <%= image_tag url_for(img) , size: "100x100" %>
+      <% end %>
+  <% else %>
+     <div> no photo</div>
+  <% end %>
+  </div>
+
 
   <div>
   <button class="buy">Buy</button>

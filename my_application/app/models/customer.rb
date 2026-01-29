@@ -1,4 +1,6 @@
 class Customer < ApplicationRecord
+  
+  has_one_attached:profile_photo
 
   #day12
   has_rich_text:about_me  #this gives rich text for the column that we need to add
@@ -10,7 +12,7 @@ class Customer < ApplicationRecord
 
 #day 10  scopes  query
 
-   scope :email_check, -> { where(email: "rahul@gmail.com") }
+  #  scope :email_check, -> { where(email: "rahul@gmail.com") }
 
    scope :blacklisted_customers, ->(customer_ids) { where(id: customer_ids) }
 

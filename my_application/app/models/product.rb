@@ -1,4 +1,9 @@
 class Product < ApplicationRecord
+
+  has_one_attached:invoice
+  has_one_attached:item_view
+  has_many_attached:view_items
+  
   has_rich_text :feedback
     scope :out_of_stock, -> { where("stock <= ?", 0) }
   # scope :out_of_stock, -> { where(stock: 0)}
