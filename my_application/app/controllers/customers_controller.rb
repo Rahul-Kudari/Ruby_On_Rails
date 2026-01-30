@@ -40,9 +40,12 @@ class CustomersController < ApplicationController
   # POST /customers or /customers.json
   def create
     @customer = Customer.new(customer_params)
-
+ 
     respond_to do |format|
-      if @customer.save
+      if @customer.save   # generally triggering mail is after save it instance only in tabel else it will bad response for customer 
+        CustomerMailer.with(customer:@customer).welcome_email.deliver
+        
+
         format.html { redirect_to @customer, notice: "Customer was successfully created." }
         format.json { render :show, status: :created, location: @customer }
       else

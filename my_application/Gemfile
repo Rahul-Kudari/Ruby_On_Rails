@@ -72,3 +72,6 @@ end
 
 gem "faker"
 
+gem "letter_opener", group: :development
+#this used for the visualization 
+gem "letter_opener_web", group: :development

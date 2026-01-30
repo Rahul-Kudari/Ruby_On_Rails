@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  
+  # this is for visualizing 
+   if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+   end
+  
 
   
   get "users/index"

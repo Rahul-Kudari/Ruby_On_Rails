@@ -1,6 +1,10 @@
 require_relative "boot"
-
+# both are important to run the application 
 require "rails/all"
+
+
+require "action_mailer/railtie"
+ #runs only once requires 
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
